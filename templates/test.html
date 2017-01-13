@@ -1,0 +1,15 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if bool %}
+  <div class=’name’>{{ name }}</div>
+{% endif %}
+
+{% for item in arr %}
+  <div class=’item’>{{ item }}</div>
+{% endfor %}
+
+{% endblock %}
+

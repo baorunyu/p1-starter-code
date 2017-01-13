@@ -8,6 +8,7 @@ app = Flask(__name__, template_folder='templates')
 
 # Register the controllers
 app.register_blueprint(controllers.album)
+# 
 app.register_blueprint(controllers.albums)
 app.register_blueprint(controllers.pic)
 app.register_blueprint(controllers.main)

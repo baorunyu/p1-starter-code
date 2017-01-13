@@ -8,6 +8,10 @@ main = Blueprint('main', __name__, template_folder='templates')
 def main_route():
     return render_template("index.html")
 
+@main.route('/hey')
+def main_hey():
+    return "Hello World!"
+
 @main.route('/hello')
 def main_hello():
     db = connect_to_database()
@@ -19,4 +23,15 @@ def main_hello():
     for result in results:
         print_str += "<tr><td>%s</td><td>%s</td><tr>" % (result['id'], result['name'])
     print_str += "</table>"
+    print(print_str)
     return print_str
+
+
+@main.route('/suh')
+def main_suh():
+    options = {
+            "name" : "Isaac",
+            "arr" : ['win15', 'fall16', 'win17'],
+            "bool" : True
+            }
+    return render_template("test.html", **options)
